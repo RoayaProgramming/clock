@@ -1,0 +1,177 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #acbaca;
+}
+.Clock{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background: #c9d5e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    box-shadow: 30px 30px 30px -10px rgba(0,0,0,0.15),
+    inset 15px 15px 10px rgba(255,255,255,0.75),
+    -15px -15px 35px rgba(255,255,255,0.55),
+    inset -1px  -1px 10px rgba(0,0,0,0.2);
+}
+
+.Clock::before{
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #e91e63;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    z-index: 1000;
+    box-shadow: 0 0 0 1px #e91e63,
+    0 0 0 3px #fff,
+    0 0 5px 5px rgba(0,0,0,0.15);
+}
+
+.Clock .numbers{
+    position: absolute;
+    inset: 35px;
+    background: #152b4a;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    box-shadow: 5px 5px 15px #152b4a66,
+    inset 5px 5px 5px rgba(255,255,255,0.55),
+    -6px -6px 10px rgba(255,255,255,1);
+}
+
+.Clock .numbers span{
+    position: absolute;
+    inset: 5px;
+    text-align: center;
+    color: #fff;
+    font-size: 1.25em;
+    transform: rotate(calc(90deg * var(--i)));
+    -webkit-transform: rotate(calc(90deg * var(--i)));
+    -moz-transform: rotate(calc(90deg * var(--i)));
+    -ms-transform: rotate(calc(90deg * var(--i)));
+    -o-transform: rotate(calc(90deg * var(--i)));
+}
+
+.Clock .numbers span b{
+    font-weight: 600;
+    display: inline-block;
+    transform: rotate(calc(-90deg * var(--i)));
+    -webkit-transform: rotate(calc(-90deg * var(--i)));
+    -moz-transform: rotate(calc(-90deg * var(--i)));
+    -ms-transform: rotate(calc(-90deg * var(--i)));
+    -o-transform: rotate(calc(-90deg * var(--i)));
+}
+
+.Clock .numbers::before{
+    content: '';
+    position: absolute;
+    inset: 35px;
+    background: linear-gradient(#2196f3,#e91e63);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    animation: animate 2s linear infinite;
+    -webkit-animation: animate 2s linear infinite;
+}
+
+@keyframes animate{
+    0%{
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+}
+100%{
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    }
+}
+
+.Clock .numbers::after {
+    content: '';
+    position: absolute;
+    inset: 38px;
+    background: #152b4a;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.Clock .numbers .circle{
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+}
+
+.Clock .numbers .circle i{
+    position: absolute;
+    width: 3px;
+    height: 50%;
+    background: #fff;
+    transform-origin: bottom;
+}
+
+.Clock .numbers .circle#hr i{
+        transform: scaleY(0.3);
+        -webkit-transform: scaleY(0.3);
+        -moz-transform: scaleY(0.3);
+        -ms-transform: scaleY(0.3);
+        -o-transform: scaleY(0.3);
+        width: 4px;
+}
+.Clock .numbers .circle#mn i{
+    transform: scaleY(0.45);
+    -webkit-transform: scaleY(0.45);
+    -moz-transform: scaleY(0.45);
+    -ms-transform: scaleY(0.45);
+    -o-transform: scaleY(0.45);
+}
+
+.Clock .numbers .circle#sc i{
+    width: 2px;
+        transform: scaleY(0.55);
+        -webkit-transform: scaleY(0.55);
+        -moz-transform: scaleY(0.55);
+        -ms-transform: scaleY(0.55);
+        -o-transform: scaleY(0.55);
+        background: #e91e66;
+        box-shadow: 0 30px #e91e63;
+}
